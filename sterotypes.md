@@ -255,10 +255,11 @@ Draw a conclusion
 
 At this point you would relate your anlaysis and intrepration to a broader context.
 
-Acknowledgments
----------------
+Acknowledgments & Authorship
+----------------------------
 
-The creation of this Rmd file came out of preparations for the Jupyter Notebook Hackathon: Reproducible Science Curriculum <https://github.com/Reproducible-Science-Curriculum/RR-Jupyter-Hackathon-Jan-2016>. While researching the particpants, I stumbled up a few blog posts by Ciera C. Martinez, including this one about handling your data like a super hero [1] and this one with advice for graduate students [2]. Rayna M Harris created the Rmarkdown file. Ciera C. Martinez drafted the blog post and content for R tutorial, which can be accessed here: <http://cierareports.org/blog/2013/10/18/rCourse2013/index.html>
+The creation of this Rmd file came out of preparations for the Jupyter Notebook Hackathon: Reproducible Science Curriculum [1] . While researching the particpants, I stumbled up a few blog posts by Ciera C. Martinez, including this one about handling your data like a super hero and this one with advice for graduate students [2]. Rayna M Harris created the Rmarkdown file. Ciera C. Martinez wrote the blog post [3] and the R code.
 
-[1] <http://cierareports.org/blog/2013/10/18/rCourse2013/index.html>
-[2] <http://cierareports.org/blog/2016/01/30/phdAdvice/index.html>
+1.  <https://github.com/Reproducible-Science-Curriculum/RR-Jupyter-Hackathon-Jan-2016>
+2.  <http://cierareports.org/blog/2013/10/18/rCourse2013/index.html>
+3.  <http://cierareports.org/blog/2016/01/30/phdAdvice/index.html>
