@@ -1,4 +1,4 @@
-# CieraReportsRLesson
+# Become a superhero, handle your data with R
 
 I just found an elegant intro to R guide [1] that is writte as a blog post with compelling comic book analogies. 
 
