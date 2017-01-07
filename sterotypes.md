@@ -258,4 +258,6 @@ At this point you would relate your anlaysis and intrepration to a broader conte
 Acknowledgments
 ---------------
 
-The creation of this Rmd file came out of preparations for the Jupyter Notebook Hackathon: Reproducible Science Curriculum <https://github.com/Reproducible-Science-Curriculum/RR-Jupyter-Hackathon-Jan-2016>. While researching the particpants, I stumbled up a few blog posts by Ciera C. Martinez, including this one about handling your data like a super hero [1] and this one with advice for graduate students [2]. [1] <http://cierareports.org/blog/2013/10/18/rCourse2013/index.html> [2] <http://cierareports.org/blog/2016/01/30/phdAdvice/index.html>
+The creation of this Rmd file came out of preparations for the Jupyter Notebook Hackathon: Reproducible Science Curriculum <https://github.com/Reproducible-Science-Curriculum/RR-Jupyter-Hackathon-Jan-2016>. While researching the particpants, I stumbled up a few blog posts by Ciera C. Martinez, including this one about handling your data like a super hero [1] and this one with advice for graduate students [2].
+[1] <http://cierareports.org/blog/2013/10/18/rCourse2013/index.html>
+[2] <http://cierareports.org/blog/2016/01/30/phdAdvice/index.html>
