@@ -1,0 +1,106 @@
+---
+title: "Become a superhero, handle your data with R"
+author: "Rayna M Harris created the Rmarkdown file. Ciera C. Martinez drafted the blog post and content for R tutorial, which can be accessed here: http://cierareports.org/blog/2013/10/18/rCourse2013/index.html"
+date: January 6, 2017
+#output: 
+#  html_document:
+#  keep_md: yes
+output:
+  md_document:
+    variant: markdown_github
+
+---
+
+## Daredevil's first day as a blind superhero
+Do know a little of the back story of the Marvel Comic superhero Daredevil. It is the story of a man who loses his sight (funny enough, by trying to save a blind man) when a radioactive substance spills onto him. Although he loses his sight, his other senses become heightened and as a result he attains super human powers. This is a great analogy to someone beginning to switch from GUI based environments, like Excel, to a new programing environment, like R. Just like Daredevil’s first day as a superhero, after losing your “sight” you will touch, feel, and of course bump into things. Actually, many of the most basic of programming commands are just simple things you type to gain an understanding of your environment. Every object in R can be defined in countless ways that are not possible to understand from a simple visual representation offered by a visual based GUI. Daredevil lost his sight, but gained the power of echo location, achieving an insight into his surroundings not capable from sight alone. Eventually you stop grasping around you and begin to learn more advanced concepts and you will be able to just glide through to exactly where you want to be. Programming will allow you to stop spending endless amounts of time searching for the correct button for the tool you want to use, instead, you literally just tell the program what you want done. You can even make tools there aren’t even buttons for. Hell, you can make tools that the world has never seen. The question is will you use your super powers for good or evil?
+
+## Load Libraries
+
+```{r loadlibraries}
+library(ggplot2)
+```
+
+## Wrangle Data
+
+The [stereotypes.csv](http://cierareports.org/downloads/r_tutorial/stereotypes.csv) file contains data on 799 individuals from ages 18 to 26 who were were surveyed about their weekly their consumption habits. They were further categorized based on their clothing and music choices and put into four stereotypes: nerds, hipsters, metalheads, and hippies. Consumption of coffee (per cup), computer usage (hourly), showers, beers(per 12oz), and tacos. Oh yeah, this dataset is fake.
+
+
+```{r wrangledata}
+
+stereotypes <- read.csv("stereotypes.csv") 
+metalheads <- subset(stereotypes, 
+                     population == "metalhead")
+metalheaddrinks <- subset(stereotypes, 
+                          population == "metalhead", 
+                          select = c(population, gender, coffee, beer))
+
+metalheaddrinks <- cbind(metalheaddrinks, (metalheaddrinks$coffee + metalheaddrinks$beer))
+names(metalheaddrinks)
+colnames(metalheaddrinks) <- c("population", "gender", "coffee", "beer", "sum")
+names(metalheaddrinks)
+
+
+
+summary(stereotypes)
+summary(metalheaddrinks)
+```
+
+## Plot Data
+
+```{r plotdata}
+
+plot(stereotypes$coffee)
+qplot(beer, tacos, data = stereotypes)
+hist(stereotypes$beer)
+boxplot(stereotypes$beer ~ stereotypes$gender)
+boxplot(stereotypes$beer ~ stereotypes$population)
+qplot(beer, tacos, data = stereotypes)
+qplot(beer, data = stereotypes, geom = "density", alpha = I(0.5), fill = population)
+qplot(tacos, data = metalheads, geom = "density", fill = gender)
+qplot(tacos, data = metalheads, geom = "density", fill = gender)
+ggplot(stereotypes, aes(beer, tacos, color = population, shape = gender)) + 
+  geom_point()
+ggplot(metalheaddrinks, aes(gender, sum)) + geom_boxplot()
+
+ggplot(metalheaddrinks, aes(gender, sum)) + geom_boxplot()
+
+p <- ggplot(stereotypes, aes(shower, beer))
+p + stat_smooth(method = "lm") + geom_point()
+
+
+```
+
+
+## Develop Hypotheses
+
+From your exploration of the stereotypes data make three hypotheses about the data.
+
+Is there a visual difference between the genders?
+
+## Analyze Data
+
+```{r analyzedata}
+t.test(metalheaddrinks$sum ~ metalheaddrinks$gender)
+cor.test(stereotypes$shower, stereotypes$beer)
+anova2 <- aov(computer ~ gender + population + 
+                gender * population, data = stereotypes)
+lm2 <- lm(computer ~ gender + population + 
+                gender * population, data = stereotypes)
+anova(anova2)
+anova(lm2)
+
+```
+
+## Interpret data
+
+What is the distribution of each of the drink columns (beer, coffee, and sum) by gender. How do they compare to one another?
+
+Is there a significant difference in drinking habits between female and male in the nerd population?
+
+Is there a significant difference in number of showers between nerds and metalheads?
+
+Is there a significant difference in taco consumption between female nerds and female metalheads?
+
+Evaluate the data and results in relation to your hypothesis.
+
+## Draw a conclusion
